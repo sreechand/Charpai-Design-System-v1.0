@@ -13,10 +13,12 @@ const ROAD_INNER =
  * the road is confident, the tree is vivid, the school is suggested,
  * and what she does not remember is left as paper.
  */
-export function RouteMap() {
+export function RouteMap({ printed = false }: {printed?: boolean;}) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
-  const reduceMotion = useReducedMotion();
+  const reduced = useReducedMotion();
+  /** On paper the whole route is simply there. Nothing is traced. */
+  const reduceMotion = Boolean(reduced) || printed;
   const [replay, setReplay] = useState(0);
   const draw = reduceMotion ? true : inView;
 
@@ -178,13 +180,15 @@ export function RouteMap() {
         </figcaption>
         <div className="flex flex-col items-start gap-touch">
           <ConfidenceKey />
+          {!printed &&
           <button
             type="button"
             onClick={() => setReplay((n) => n + 1)}
             className="font-ui text-[0.8rem] text-ink-soft underline decoration-ink-rule underline-offset-4 transition-colors duration-150 hover:text-ink">
             
-            Trace the walk again
-          </button>
+              Trace the walk again
+            </button>
+          }
         </div>
       </div>
     </figure>);

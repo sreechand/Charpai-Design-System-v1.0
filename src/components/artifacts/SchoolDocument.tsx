@@ -9,11 +9,14 @@ import { schoolDocument } from '../../data/story';
  */
 export function SchoolDocument({
   open,
-  onOpen
+  onOpen,
+  printed = false
 
 
 
-}: {open: boolean;onOpen: (next: boolean) => void;}) {
+
+
+}: {open: boolean;onOpen: (next: boolean) => void; /** In the printed book the reproduction is simply folded and pocketed. */printed?: boolean;}) {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -71,14 +74,16 @@ export function SchoolDocument({
           }
         </AnimatePresence>
 
+        {!printed &&
         <button
           type="button"
           onClick={() => onOpen(!open)}
           aria-expanded={open}
           className="mt-object font-ui text-[0.8rem] text-ink-soft underline decoration-ink-rule underline-offset-4 transition-colors duration-150 hover:text-ink">
           
-          {open ? 'Fold it back' : 'Unfold the record'}
-        </button>
+            {open ? 'Fold it back' : 'Unfold the record'}
+          </button>
+        }
       </div>
 
       <figcaption className="mt-object">
