@@ -56,7 +56,7 @@ export function LandingPage() {
       <nav className="fixed top-0 inset-x-0 z-50 bg-charpai-cream/90 backdrop-blur-md border-b border-charpai-gold/30">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/charapai_logo.png" alt="Charpai" className="w-9 h-9 object-contain" />
+            <img src="/charapai_logo.png" alt="Charpai" className="w-[72px] h-[72px] object-contain" />
             <span className="font-story text-lg text-charpai-ink font-bold tracking-tight">Charpai</span>
           </div>
 
@@ -280,7 +280,7 @@ export function LandingPage() {
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="max-w-sm">
               <div className="flex items-center gap-2 mb-3">
-                <img src="/charapai_logo.png" alt="Charpai" className="w-10 h-10 object-contain" />
+                <img src="/charapai_logo.png" alt="Charpai" className="w-[80px] h-[80px] object-contain" />
                 <span className="font-story text-lg font-bold">Charpai</span>
               </div>
               <p className="text-sm text-paper/60 leading-relaxed">
