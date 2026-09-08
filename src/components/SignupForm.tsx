@@ -50,8 +50,8 @@ export function SignupForm({ variant = 'hero', onSuccess }: SignupFormProps) {
     return (
       <div className={`rounded-2xl bg-white/80 backdrop-blur-sm border border-paper-edge p-6 text-center ${variant === 'hero' ? 'shadow-loose' : ''}`}>
         <div className="flex items-center justify-center mb-3">
-          <div className="w-12 h-12 rounded-full bg-banyan/10 flex items-center justify-center">
-            <svg className="w-6 h-6 text-banyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-12 h-12 rounded-full bg-charpai-gold/15 flex items-center justify-center">
+            <svg className="w-6 h-6 text-charpai-gold-deep" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
@@ -78,7 +78,7 @@ export function SignupForm({ variant = 'hero', onSuccess }: SignupFormProps) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Your email address"
-          className="w-full px-4 py-3 rounded-xl bg-paper/60 border border-ink-rule/40 text-ink placeholder:text-ink-faint focus:outline-none focus:border-banyan focus:ring-1 focus:ring-banyan transition-colors text-base"
+          className="w-full px-4 py-3 rounded-xl bg-paper/60 border border-ink-rule/40 text-ink placeholder:text-ink-faint focus:outline-none focus:border-charpai-gold-deep focus:ring-1 focus:ring-charpai-gold-deep transition-colors text-base"
           disabled={state === 'submitting'}
         />
 
@@ -86,7 +86,7 @@ export function SignupForm({ variant = 'hero', onSuccess }: SignupFormProps) {
           <button
             type="button"
             onClick={() => setShowDetails(true)}
-            className="text-sm text-banyan hover:text-banyan/80 transition-colors font-medium"
+            className="text-sm text-charpai-gold-deep hover:text-charpai-gold-deep/80 transition-colors font-medium"
           >
             Tell us more (optional)
           </button>
@@ -99,7 +99,7 @@ export function SignupForm({ variant = 'hero', onSuccess }: SignupFormProps) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Your name"
-              className="w-full px-4 py-3 rounded-xl bg-paper/60 border border-ink-rule/40 text-ink placeholder:text-ink-faint focus:outline-none focus:border-banyan focus:ring-1 focus:ring-banyan transition-colors text-base"
+              className="w-full px-4 py-3 rounded-xl bg-paper/60 border border-ink-rule/40 text-ink placeholder:text-ink-faint focus:outline-none focus:border-charpai-gold-deep focus:ring-1 focus:ring-charpai-gold-deep transition-colors text-base"
               disabled={state === 'submitting'}
             />
             <input
@@ -107,7 +107,7 @@ export function SignupForm({ variant = 'hero', onSuccess }: SignupFormProps) {
               value={familyMemberName}
               onChange={(e) => setFamilyMemberName(e.target.value)}
               placeholder="Who do you want to interview?"
-              className="w-full px-4 py-3 rounded-xl bg-paper/60 border border-ink-rule/40 text-ink placeholder:text-ink-faint focus:outline-none focus:border-banyan focus:ring-1 focus:ring-banyan transition-colors text-base"
+              className="w-full px-4 py-3 rounded-xl bg-paper/60 border border-ink-rule/40 text-ink placeholder:text-ink-faint focus:outline-none focus:border-charpai-gold-deep focus:ring-1 focus:ring-charpai-gold-deep transition-colors text-base"
               disabled={state === 'submitting'}
             />
           </div>
@@ -120,7 +120,7 @@ export function SignupForm({ variant = 'hero', onSuccess }: SignupFormProps) {
         <button
           type="submit"
           disabled={state === 'submitting'}
-          className="w-full py-3.5 rounded-xl bg-banyan text-white font-medium text-base hover:bg-banyan/90 active:bg-banyan/80 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full py-3.5 rounded-xl bg-charpai-ink text-white font-medium text-base hover:bg-charpai-gold-deep active:bg-charpai-gold-deep transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {state === 'submitting' ? 'Reserving your spot...' : 'Sign up — it is free'}
         </button>

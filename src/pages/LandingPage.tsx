@@ -4,8 +4,6 @@ import {
   heroImage,
   howItWorksSteps,
   features,
-  testimonials,
-  pricingPlans,
   faqs,
 } from '../data/landingContent';
 
@@ -55,28 +53,23 @@ export function LandingPage() {
   return (
     <div className="paper-canvas min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 inset-x-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink-rule/30">
+      <nav className="fixed top-0 inset-x-0 z-50 bg-charpai-cream/90 backdrop-blur-md border-b border-charpai-gold/30">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-banyan flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-              </svg>
-            </div>
-            <span className="font-story text-lg text-ink font-bold tracking-tight">Heirloom</span>
+            <img src="/charapai_logo.png" alt="Charpai" className="w-9 h-9 object-contain" />
+            <span className="font-story text-lg text-charpai-ink font-bold tracking-tight">Charpai</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('how-it-works')} className="text-sm text-ink-soft hover:text-ink transition-colors">How it works</button>
-            <button onClick={() => scrollToSection('features')} className="text-sm text-ink-soft hover:text-ink transition-colors">Features</button>
-            <button onClick={() => scrollToSection('stories')} className="text-sm text-ink-soft hover:text-ink transition-colors">Stories</button>
-            <button onClick={() => scrollToSection('pricing')} className="text-sm text-ink-soft hover:text-ink transition-colors">Pricing</button>
+            <button onClick={() => scrollToSection('features')} className="text-sm text-ink-soft hover:text-ink transition-colors">What we preserve</button>
+            <button onClick={() => scrollToSection('origin')} className="text-sm text-ink-soft hover:text-ink transition-colors">Why Charpai</button>
             <button onClick={() => scrollToSection('faq')} className="text-sm text-ink-soft hover:text-ink transition-colors">FAQ</button>
           </div>
 
           <button
             onClick={() => scrollToSection('signup')}
-            className="px-5 py-2 rounded-lg bg-banyan text-white text-sm font-medium hover:bg-banyan/90 transition-colors"
+            className="px-5 py-2 rounded-lg bg-charpai-ink text-white text-sm font-medium hover:bg-charpai-ink/90 transition-colors"
           >
             Sign up
           </button>
@@ -88,25 +81,23 @@ export function LandingPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="narrative-measure md:narrative-measure-none">
-              <p className="text-sm font-medium text-banyan tracking-wide uppercase mb-4">
-                A family heirloom, told in their voice
+              <p className="text-sm font-medium text-charpai-gold-deep tracking-wide uppercase mb-4">
+                For the stories between generations
               </p>
               <h1 className="font-story text-display text-ink mb-6 leading-tight">
-                Get your family member talking.
+                We are the generation
                 <br />
-                <span className="text-banyan">We will be there through the way.</span>
+                <span className="text-charpai-gold-deep">between voice and screen.</span>
               </h1>
               <p className="font-story text-narrative text-ink-soft mb-8 leading-relaxed">
-                We send thoughtful prompts, guide the conversation, and bind it all into a
-                beautiful hardcover book your family will keep for ages. No writing required —
-                they just talk.
+                So much of our heritage lives in stories that were never written down. Charpai helps you bring a loved one’s voice into the digital age — with thoughtful prompts, gentle guidance, and a storybook made to stay.
               </p>
               <div className="flex flex-wrap gap-4 items-center mb-8">
                 <button
                   onClick={() => scrollToSection('signup')}
-                  className="px-7 py-3.5 rounded-xl bg-banyan text-white font-medium text-base hover:bg-banyan/90 active:bg-banyan/80 transition-colors shadow-mounted"
+                  className="px-7 py-3.5 rounded-xl bg-charpai-ink text-white font-medium text-base hover:bg-charpai-ink/90 active:bg-charpai-ink/80 transition-colors shadow-mounted"
                 >
-                  Start your heirloom
+                  Preserve a story
                 </button>
                 <button
                   onClick={() => scrollToSection('how-it-works')}
@@ -115,18 +106,9 @@ export function LandingPage() {
                   See how it works
                 </button>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="flex -space-x-2">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="w-8 h-8 rounded-full border-2 border-paper bg-ink-soft/20 flex items-center justify-center text-xs text-ink-soft">
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-ink-faint">
-                  Join thousands of families preserving their stories
-                </p>
-              </div>
+              <p className="font-hand text-lg text-charpai-gold-deep">
+                A quiet place for the stories that shaped us.
+              </p>
             </div>
 
             <div className="relative">
@@ -141,8 +123,8 @@ export function LandingPage() {
               {/* Floating card */}
               <div className="absolute -bottom-6 -left-6 md:-left-12 bg-white rounded-xl shadow-lifted p-4 max-w-[240px] hidden sm:block">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-wrappergold/15 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-wrappergold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <div className="w-10 h-10 rounded-full bg-charpai-gold/15 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-charpai-gold-deep" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                     </svg>
                   </div>
@@ -161,10 +143,10 @@ export function LandingPage() {
       <section id="how-it-works" className="py-20 md:py-28 bg-paper-deep/50 border-y border-ink-rule/20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-sm font-medium text-banyan tracking-wide uppercase mb-3">How it works</p>
-            <h2 className="font-story text-storytitle text-ink mb-4">From question to printed heirloom</h2>
+            <p className="text-sm font-medium text-charpai-gold-deep tracking-wide uppercase mb-3">How it works</p>
+            <h2 className="font-story text-storytitle text-ink mb-4">From conversation to keepsake</h2>
             <p className="font-story text-narrative text-ink-soft max-w-2xl mx-auto">
-              A simple journey that turns conversations into a keepsake your family will treasure for generations.
+              A simple journey that turns the stories your family carries into something you can hold, share, and pass on.
             </p>
           </div>
 
@@ -177,7 +159,7 @@ export function LandingPage() {
                   </div>
                 </div>
                 <div className="md:[direction:ltr]">
-                  <span className="font-story text-5xl text-banyan/30 font-bold block mb-2">{step.number}</span>
+                  <span className="font-story text-5xl text-charpai-gold-deep/30 font-bold block mb-2">{step.number}</span>
                   <h3 className="font-story text-2xl text-ink mb-3 font-bold">{step.title}</h3>
                   <p className="font-story text-narrative text-ink-soft leading-relaxed">{step.description}</p>
                 </div>
@@ -191,10 +173,10 @@ export function LandingPage() {
       <section id="features" className="py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-sm font-medium text-banyan tracking-wide uppercase mb-3">Why families choose us</p>
-            <h2 className="font-story text-storytitle text-ink mb-4">Everything you need to capture a life</h2>
+            <p className="text-sm font-medium text-charpai-gold-deep tracking-wide uppercase mb-3">What Charpai preserves</p>
+            <h2 className="font-story text-storytitle text-ink mb-4">A quieter way to hold what matters</h2>
             <p className="font-story text-narrative text-ink-soft max-w-2xl mx-auto">
-              We handle the hard parts so you can focus on what matters: being present with the people you love.
+              We handle the hard parts so you can focus on what matters: being present with the people you love, in the language and rhythm that feels like home.
             </p>
           </div>
 
@@ -202,10 +184,10 @@ export function LandingPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-2xl bg-white/60 border border-ink-rule/30 p-6 hover:shadow-loose hover:border-banyan/30 transition-all duration-300"
+                className="rounded-2xl bg-white/60 border border-charpai-gold/30 p-6 hover:shadow-loose hover:border-charpai-gold/40 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-banyan/10 flex items-center justify-center mb-4">
-                  <Icon name={feature.icon} className="w-6 h-6 text-banyan" />
+                <div className="w-12 h-12 rounded-xl bg-charpai-ink/10 flex items-center justify-center mb-4">
+                  <Icon name={feature.icon} className="w-6 h-6 text-charpai-gold-deep" />
                 </div>
                 <h3 className="font-story text-lg text-ink mb-2 font-bold">{feature.title}</h3>
                 <p className="text-sm text-ink-soft leading-relaxed">{feature.description}</p>
@@ -215,110 +197,36 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="stories" className="py-20 md:py-28 bg-paper-deep/50 border-y border-ink-rule/20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sm font-medium text-banyan tracking-wide uppercase mb-3">Family stories</p>
-            <h2 className="font-story text-storytitle text-ink mb-4">Stories that would have been lost</h2>
+      {/* Origin */}
+      <section id="origin" className="py-20 md:py-28 bg-charpai-ink text-charpai-cream">
+        <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-20 items-start">
+          <div>
+            <p className="text-sm font-medium text-charpai-gold tracking-wide uppercase mb-3">Why Charpai</p>
+            <h2 className="font-story text-storytitle text-charpai-cream">A bridge for what we cannot afford to lose.</h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="rounded-2xl bg-white/70 border border-ink-rule/30 p-6 flex flex-col">
-                <div className="flex items-center gap-1 mb-4 text-wrappergold">
-                  {[1,2,3,4,5].map(i => (
-                    <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="font-story text-base text-ink leading-relaxed flex-grow italic">
-                  "{t.quote}"
-                </blockquote>
-                <div className="flex items-center gap-3 mt-6 pt-4 border-t border-ink-rule/20">
-                  <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
-                  <div>
-                    <p className="font-story text-sm text-ink font-bold">{t.name}</p>
-                    <p className="text-xs text-ink-faint">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="font-story text-narrative text-charpai-cream/80 space-y-5">
+            <p>Sreechand’s friends have often talked about being the generation between oral traditions and digital mediums.</p>
+            <p>We grew up hearing stories in courtyards, kitchens, on charpais, and during long journeys. Now, those stories are disappearing with the people who carry them — while our phones fill up with everything but what matters.</p>
+            <p>Charpai is a gentle way to keep the conversation going. We help families gather the voices, memories, humour, recipes, places, and lessons that make a community — then shape them into something that can be held, shared, and passed on.</p>
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section id="pricing" className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sm font-medium text-banyan tracking-wide uppercase mb-3">Pricing</p>
-            <h2 className="font-story text-storytitle text-ink mb-4">One price. Forever access.</h2>
-            <p className="font-story text-narrative text-ink-soft max-w-2xl mx-auto">
-              No subscriptions. No recurring fees. Pay once, and the stories are yours forever — even if you never buy another book.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-2xl p-6 border transition-all duration-300 ${
-                  plan.highlighted
-                    ? 'bg-banyan text-white border-banyan shadow-lifted md:scale-105'
-                    : 'bg-white/60 border-ink-rule/30 hover:shadow-loose'
-                }`}
-              >
-                {plan.highlighted && (
-                  <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-medium mb-4">
-                    Most popular
-                  </div>
-                )}
-                <h3 className={`font-story text-xl font-bold mb-2 ${plan.highlighted ? 'text-white' : 'text-ink'}`}>{plan.name}</h3>
-                <p className={`text-sm mb-4 ${plan.highlighted ? 'text-white/80' : 'text-ink-soft'}`}>{plan.description}</p>
-                <div className="mb-6">
-                  <span className={`font-story text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-ink'}`}>{plan.price}</span>
-                  <span className={`text-sm ${plan.highlighted ? 'text-white/70' : 'text-ink-faint'}`}> / {plan.period}</span>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm">
-                      <svg
-                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-white/90' : 'text-banyan'}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className={plan.highlighted ? 'text-white/90' : 'text-ink-soft'}>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => scrollToSection('signup')}
-                  className={`w-full py-3 rounded-xl font-medium text-base transition-colors ${
-                    plan.highlighted
-                      ? 'bg-white text-banyan hover:bg-white/90'
-                      : 'bg-banyan text-white hover:bg-banyan/90'
-                  }`}
-                >
-                  {plan.cta}
-                </button>
-              </div>
-            ))}
-          </div>
+      {/* Early access */}
+      <section id="early-access" className="py-20 md:py-28 bg-charpai-sand/30">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-sm font-medium text-charpai-gold-deep tracking-wide uppercase mb-3">A work in progress, with care</p>
+          <h2 className="font-story text-storytitle text-ink mb-4">Help us make the first Charpai.</h2>
+          <p className="font-story text-narrative text-ink-soft max-w-2xl mx-auto">We are shaping a slower, more human way to preserve family memory. Join the early list and help us learn what your family needs to keep its stories alive.</p>
         </div>
       </section>
 
       {/* Signup */}
-      <section id="signup" className="py-20 md:py-28 bg-banyan text-white">
+      <section id="signup" className="py-20 md:py-28 bg-charpai-ink text-white">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="font-story text-storytitle text-white mb-4">Start your family heirloom today</h2>
-          <p className="font-story text-narrative text-white/80 mb-10 max-w-lg mx-auto">
-            Sign up for free. Tell us who you want to interview. We will send the first prompt this week.
+          <h2 className="font-story text-storytitle text-white mb-4">Give a story somewhere to live.</h2>
+          <p className="font-story text-narrative text-charpai-cream/80 mb-10 max-w-lg mx-auto">
+            Tell us who you want to hear from. We will keep you close as Charpai takes shape.
           </p>
           <div className="max-w-md mx-auto">
             <SignupForm variant="section" />
@@ -330,7 +238,7 @@ export function LandingPage() {
       <section id="faq" className="py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-sm font-medium text-banyan tracking-wide uppercase mb-3">FAQ</p>
+            <p className="text-sm font-medium text-charpai-gold-deep tracking-wide uppercase mb-3">FAQ</p>
             <h2 className="font-story text-storytitle text-ink mb-4">Questions, answered</h2>
           </div>
 
@@ -338,7 +246,7 @@ export function LandingPage() {
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="rounded-xl bg-white/60 border border-ink-rule/30 overflow-hidden"
+                className="rounded-xl bg-white/60 border border-charpai-gold/30 overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
@@ -372,15 +280,11 @@ export function LandingPage() {
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="max-w-sm">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-banyan flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                  </svg>
-                </div>
-                <span className="font-story text-lg font-bold">Heirloom</span>
+                <img src="/charapai_logo.png" alt="Charpai" className="w-10 h-10 object-contain" />
+                <span className="font-story text-lg font-bold">Charpai</span>
               </div>
               <p className="text-sm text-paper/60 leading-relaxed">
-                A family heirloom, told in their voice. We help you capture the stories that matter and bind them into a book that lasts for ages.
+                A bridge between oral tradition and digital memory. Charpai helps families keep the stories that shape them.
               </p>
             </div>
 
@@ -389,8 +293,8 @@ export function LandingPage() {
                 <p className="text-sm text-paper/50 mb-3 uppercase tracking-wide">Company</p>
                 <div className="space-y-2">
                   <button onClick={() => scrollToSection('how-it-works')} className="block text-sm text-paper/80 hover:text-paper transition-colors">How it works</button>
-                  <button onClick={() => scrollToSection('stories')} className="block text-sm text-paper/80 hover:text-paper transition-colors">Stories</button>
-                  <button onClick={() => scrollToSection('pricing')} className="block text-sm text-paper/80 hover:text-paper transition-colors">Pricing</button>
+                  <button onClick={() => scrollToSection('origin')} className="block text-sm text-paper/80 hover:text-paper transition-colors">Why Charpai</button>
+                  <button onClick={() => scrollToSection('early-access')} className="block text-sm text-paper/80 hover:text-paper transition-colors">Early access</button>
                 </div>
               </div>
               <div>
@@ -404,7 +308,7 @@ export function LandingPage() {
           </div>
 
           <div className="mt-10 pt-6 border-t border-paper/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <p className="text-xs text-paper/40">© 2026 Heirloom. All rights reserved.</p>
+            <p className="text-xs text-paper/40">© 2026 Charpai. All rights reserved.</p>
             <p className="text-xs text-paper/40">Made with care for families everywhere.</p>
           </div>
         </div>

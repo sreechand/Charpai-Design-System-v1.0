@@ -24,8 +24,15 @@ export default {content: [
         oxide: '#9C4A2F',
         penblue: '#2C3E5C',
         banyan: '#4F5F3C',
-        wrappergold: '#A9863F',
+        wrappergold: '#D7A84A',
         uniform: '#3F5147',
+        charpai: {
+          ink: '#171717',
+          gold: '#D7A84A',
+          'gold-deep': '#A87522',
+          cream: '#F7F1E3',
+          sand: '#E8D8B5',
+        },
         /* Memory Palette — Hyderabad, 1976 or 1978.
            Teak veneer cabinet, the blue-green of a test card on a warm-up
            screen, carbon-copy violet from the hire-purchase book, chrome stand. */
