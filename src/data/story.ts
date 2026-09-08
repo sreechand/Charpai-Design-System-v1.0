@@ -54,6 +54,17 @@ export const closingLine =
 export const restLine =
 'Kamala still says the shade was not cold. She says I remember it cold because we were happy.';
 
+/**
+ * On a phone the map is not a spread to take in at once — it is a walk you
+ * drag along. These are its stops, in the order she describes them.
+ */
+export const routeStops = [
+{ id: 'house', label: 'Our house', at: 4 },
+{ id: 'shop', label: 'The shop', at: 26 },
+{ id: 'banyan', label: 'The banyan', at: 48 },
+{ id: 'school', label: 'The school', at: 88 }];
+
+
 export const photograph: ArtifactMeta = {
   kind: 'Photograph · original print',
   place: 'Governorpet, Vijayawada',

@@ -31,7 +31,7 @@ import {
 
 const ATTRIBUTION = 'Thatha, 2026';
 
-export function TheTelevision({ onOnward }: {onOnward: () => void;}) {
+export function TheTelevision({ onNavigate }: {onNavigate: (view: string) => void;}) {
   const [playing, setPlaying] = useState(false);
   const [narrationOpen, setNarrationOpen] = useState(false);
   const { recalls, remember, touched } = useReaderMemory();
@@ -50,7 +50,8 @@ export function TheTelevision({ onOnward }: {onOnward: () => void;}) {
           if (!narrationOpen) return startNarration();
           setPlaying((p) => !p);
         }}
-        onBack={onOnward} />
+        onBack={() => onNavigate('fieldbook')}
+        onContents={() => onNavigate('fieldbook')} />
       
 
       <main>
@@ -130,7 +131,8 @@ export function TheTelevision({ onOnward }: {onOnward: () => void;}) {
               label={bicycleThread.label}
               count={bicycleThread.count}
               span={bicycleThread.span}
-              note={bicycleThread.note} />
+              note={bicycleThread.note}
+              onFollow={() => onNavigate('thread:hercules-bicycle')} />
             
           </div>
         </section>
@@ -142,7 +144,7 @@ export function TheTelevision({ onOnward }: {onOnward: () => void;}) {
           restLine={televisionRest}
           touched={touched}
           onward="Another story from Ammamma — the walk to school"
-          onOnward={onOnward} />
+          onOnward={() => onNavigate('walk-to-school')} />
         
       </main>
 

@@ -9,13 +9,15 @@ export function ObjectThread({
   label,
   count,
   span,
-  note
+  note,
+  onFollow
 
 
 
 
 
-}: {label: string;count: string;span: string;note: string;}) {
+
+}: {label: string;count: string;span: string;note: string;onFollow?: () => void;}) {
   return (
     <aside className="border-t border-ink-rule pt-object">
       <p className="font-doc text-doc uppercase text-ink-soft">
@@ -27,6 +29,7 @@ export function ObjectThread({
       </p>
       <button
         type="button"
+        onClick={onFollow}
         className="mt-object inline-flex items-center gap-1.5 font-ui text-[0.8rem] text-ink-soft underline decoration-ink-rule underline-offset-4 transition-colors duration-150 hover:text-ink">
         
         Follow it through his life

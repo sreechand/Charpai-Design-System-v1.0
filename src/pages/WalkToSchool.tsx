@@ -30,12 +30,12 @@ const ATTRIBUTION = 'Ammamma, 2026';
 export function WalkToSchool({
   mounting,
   opening,
-  onOnward
+  onNavigate
 
 
 
 
-}: {mounting: MountingStyle;opening: OpeningStrategy;onOnward: () => void;}) {
+}: {mounting: MountingStyle;opening: OpeningStrategy;onNavigate: (view: string) => void;}) {
   const [playing, setPlaying] = useState(false);
   const [narrationOpen, setNarrationOpen] = useState(false);
   const { recalls, remember, touched } = useReaderMemory();
@@ -70,7 +70,8 @@ export function WalkToSchool({
           if (!narrationOpen) return startNarration();
           setPlaying((p) => !p);
         }}
-        onBack={onOnward} />
+        onBack={() => onNavigate('fieldbook')}
+        onContents={() => onNavigate('fieldbook')} />
       
 
       <main>
@@ -161,7 +162,7 @@ export function WalkToSchool({
           restLine={restLine}
           touched={touched}
           onward="Another story — Thatha, and the year the television came"
-          onOnward={onOnward} />
+          onOnward={() => onNavigate('the-television')} />
         
       </main>
 

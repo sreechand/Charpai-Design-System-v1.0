@@ -11,6 +11,7 @@ export function TopBar({
   playing,
   onTogglePlay,
   onBack,
+  onContents,
   backLabel = 'Back'
 
 
@@ -18,7 +19,8 @@ export function TopBar({
 
 
 
-}: {meta: StoryMeta;playing: boolean;onTogglePlay: () => void;onBack?: () => void;backLabel?: string;}) {
+
+}: {meta: StoryMeta;playing: boolean;onTogglePlay: () => void;onBack?: () => void;onContents?: () => void;backLabel?: string;}) {
   return (
     <header className="sticky top-0 z-30 border-b border-ink-rule/60 bg-paper/90 backdrop-blur-[2px]">
       <nav
@@ -36,6 +38,7 @@ export function TopBar({
           </button>
           <button
             type="button"
+            onClick={onContents}
             className="inline-flex items-center gap-1.5 font-ui text-sm text-ink-soft transition-colors duration-150 hover:text-ink">
             
             <ListIcon aria-hidden="true" className="h-4 w-4" />
