@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { LandingPage } from './pages/LandingPage';
 import { Fieldbook } from './pages/Fieldbook';
 import { Thread } from './pages/Thread';
 import { WalkToSchool } from './pages/WalkToSchool';
@@ -10,7 +11,7 @@ import { useIsPhone } from './hooks/useIsPhone';
 
 interface AppProps {
   /** Where the book is open: its contents, one of the stories, or a print layout. */
-  view?: 'fieldbook' | 'walk-to-school' | 'the-television' | 'printed-book';
+  view?: 'landing' | 'fieldbook' | 'walk-to-school' | 'the-television' | 'printed-book';
   /** Which composition the story is read in. 'auto' follows the viewport. */
   format?: 'auto' | 'phone' | 'desktop';
   /** How The Walk to School begins: with the object, her voice, or as a book. */
@@ -20,7 +21,7 @@ interface AppProps {
 }
 
 export function App({
-  view = 'fieldbook',
+  view = 'landing',
   format = 'auto',
   opening = 'artifact',
   mounting = 'corners'
@@ -36,6 +37,10 @@ export function App({
   };
 
   const phone = format === 'phone' || format === 'auto' && isPhone;
+
+  if (current === 'landing') {
+    return <LandingPage />;
+  }
 
   if (current.startsWith('thread:')) {
     return <Thread threadId={current.slice('thread:'.length)} onNavigate={navigate} />;
